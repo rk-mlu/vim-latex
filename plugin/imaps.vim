@@ -565,11 +565,11 @@ endfunction
 " etc.
 
 " jumping forward and back in insert mode.
-inoremap <silent> <Plug>IMAP_JumpForward    <C-\><C-N>:call IMAP_Jumpfunc('', 0)<CR>
+inoremap <silent> <Plug>(IMAP_JumpForward)    <C-\><C-N>:call IMAP_Jumpfunc('', 0)<CR>
 inoremap <silent> <Plug>IMAP_JumpBack       <C-\><C-N>:call IMAP_Jumpfunc('b', 0)<CR>
 
 " jumping in normal mode
-nnoremap <silent> <Plug>IMAP_JumpForward        :call IMAP_Jumpfunc('', 0)<CR>
+nnoremap <silent> <Plug>(IMAP_JumpForward)        :call IMAP_Jumpfunc('', 0)<CR>
 nnoremap <silent> <Plug>IMAP_JumpBack           :call IMAP_Jumpfunc('b', 0)<CR>
 
 " deleting the present selection and then jumping forward.
@@ -577,7 +577,7 @@ vnoremap <silent> <Plug>IMAP_DeleteAndJumpForward       "_<Del>:call IMAP_Jumpfu
 vnoremap <silent> <Plug>IMAP_DeleteAndJumpBack          "_<Del>:call IMAP_Jumpfunc('b', 0)<CR>
 
 " jumping forward without deleting present selection.
-vnoremap <silent> <Plug>IMAP_JumpForward       <C-\><C-N>:call IMAP_Jumpfunc('', 0)<CR>
+vnoremap <silent> <Plug>(IMAP_JumpForward)       <C-\><C-N>:call IMAP_Jumpfunc('', 0)<CR>
 vnoremap <silent> <Plug>IMAP_JumpBack          <C-\><C-N>`<:call IMAP_Jumpfunc('b', 0)<CR>
 
 " }}}
@@ -586,12 +586,12 @@ vnoremap <silent> <Plug>IMAP_JumpBack          <C-\><C-N>`<:call IMAP_Jumpfunc('
 " NOTE: Default mappings for jumping to the previous placeholder are not
 "       provided. It is assumed that if the user will create such mappings
 "       hself if e so desires.
-if !hasmapto('<Plug>IMAP_JumpForward', 'i')
-    imap <C-J> <Plug>IMAP_JumpForward
-endif
-if !hasmapto('<Plug>IMAP_JumpForward', 'n')
-    nmap <C-J> <Plug>IMAP_JumpForward
-endif
+" if !hasmapto('<Plug>IMAP_JumpForward', 'i')
+"     imap <C-J> <Plug>IMAP_JumpForward
+" endif
+" if !hasmapto('<Plug>IMAP_JumpForward', 'n')
+"     nmap <C-J> <Plug>IMAP_JumpForward
+" endif
 if exists('g:Imap_StickyPlaceHolders') && g:Imap_StickyPlaceHolders
 	if !hasmapto('<Plug>IMAP_JumpForward', 'v')
 		vmap <C-J> <Plug>IMAP_JumpForward
