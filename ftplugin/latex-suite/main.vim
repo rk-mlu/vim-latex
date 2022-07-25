@@ -982,6 +982,7 @@ if g:Tex_Diacritics != 0
 	exe 'source '.fnameescape(s:path.'/diacritics.vim')
 endif
 
+exe 'source '.fnameescape(s:path.'/jump2placeholder.vim')
 exe 'source '.fnameescape(s:path.'/texviewer.vim')
 exe 'source '.fnameescape(s:path.'/version.vim')
 
